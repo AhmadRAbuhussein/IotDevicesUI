@@ -71,7 +71,7 @@ styleOverrides: {
 	},
 	palette: {
 		primary: {
-			main: "#ec2427",
+			main: "#ff7b42",
 			light: "#ec2427"
 		},
 		secondary: {

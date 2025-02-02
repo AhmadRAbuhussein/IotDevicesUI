@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  react-app:
+    build: .
+    container_name: nxgen-ui
+    restart: always
+    ports:
+      - "3000:80"
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
