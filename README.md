@@ -5,7 +5,8 @@ TODO: Give a short introduction of your project. Let this section explain the ob
 
 ### Running Docker
 
-- docker-compose up
+- docker compose up --build
+
 
 ### 1. Project Setup
 
