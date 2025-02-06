@@ -1,12 +1,21 @@
 import React from "react";
 import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import { SearchDeviceDataModel } from 'types/deviceData';
+import { useSearchDeviceDataQuery } from 'data/devices';
 
 interface IProps {
-  data: SearchDeviceDataModel[]
+  id: string
 }
 
-const TimeSeriesChart = ({data}: IProps) => {
+const TimeSeriesChart = ({id}:IProps) => {
+  const { data, isFetching } = useSearchDeviceDataQuery(
+    { deviceId: id ?? "" },
+    {
+      pollingInterval: 3000,
+      refetchOnFocus: true,
+      refetchOnReconnect: true,
+    }
+  );
   return (
     <div style={{width: "100%", height: 400}}>
       <ResponsiveContainer width="100%" height="100%">
